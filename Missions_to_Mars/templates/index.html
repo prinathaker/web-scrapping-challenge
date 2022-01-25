@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <style>
+ 
+
+        body {
+            width: 100%;
+            min-height: 100%;
+            background-color: white;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #002a57;
+            border-color: #002a57;
+            }
+        .jumbotron {
+            padding: 5rem 4rem;
+            margin-bottom: 5rem;
+            background-image: image-set('1500x500.jpeg');
+            background-color: #d79635;
+            border-radius: .5rem;
+            }
+
+
+        img {
+            width: 100%;
+        }
+
+        .boxborder {
+            /* background: lightgray; */
+            padding: 10px;
+            border: rgb(0, 0, 0) 2px solid;
+        }
+
+        .boxmargin {
+            /* background: lightgray; */
+            padding: 2px;
+            border: rgb(0, 0, 0) 2px solid;
+            margin: 10px 0px 10px 0px;
+        }
+
+        #vpadding {
+            padding: 25% 0;
+            }
+        #scale_id {
+            width: 500px;
+            height: 500px;
+            object-fit: fill;
+}</style>
+</head>
+
+<body class="text-white" style="background-color:black;">
+    <div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center" style="background-image: url(https://cdn.theatlantic.com/static/mt/assets/science/0831Pic.jpg); background-size: 100%; height: 100%;">
+        <h1 class="display-4">Mission to Mars</h1>
+        <a class="btn btn-lg text-white" style="background-color:#c1440e;" href="/scrape" role="button">Scrape New Data</a>
+    </div>
+
+    <!-- News Section -->
+    <div class="container">
+        <h3>Latest Mars News</h3>
+        <h6 style="color: #c1440e">{{ mars_data.news_title }}</h6>
+        <p style="color: #c1440e">{{ mars_data.news_p}}</p>
+  
+       
+    </div>
+
+        <div class="container">
+            <div class="row row-cols-*">
+                <div class="col">
+                    <h3>Featured Mars Image</h3> <img src={{mars_data.mars_img}} style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+                </div>
+                <div class="col">
+                     <h3>Mars v. Earth Comparison </h3>
+                                {{mars_data.mars_fact | safe}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <div class="container mt-4 bg-light rounded"><br>
+        <h2 class="text-center text-dark">Mars Hemispheres</h2><br>
+        <!-- <hr> -->
+        <div class="card-group">
+
+            <div class="col-md-3">
+                <div class="card">
+
+                    <img src="{{mars_data.image1}}" class="card-img-top img-fluid" alt="{{mars_data.title1}}">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">{{mars_data.title1 }}</h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="card">
+
+                    <img src="{{mars_data.image2}}" class="card-img-top img-fluid" alt="{{mars_data.title2}}">
+                    <div class="card-body  text-dark">
+                        <h5 class="card-title">{{mars_data.title2 }}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+
+                    <img src="{{mars_data.image3 }}" class="card-img-top img-fluid" alt="{{mars_data.title3 }}">
+                    <div class="card-body text-dark ">
+                        <h5 class="card-title">{{mars_data.title3 }}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+
+                    <img src="{{mars_data.image4 }}" class="card-img-top img-fluid" alt="{{mars_data.title4 }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark ">{{mars_data.title4 }}</h5>
+                    </div>
+                </div>
+            </div>
+
+
+        </div><br><br>
+    </div>
+
+
+</body>
+
+</html>
